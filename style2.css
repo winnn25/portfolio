@@ -1,0 +1,141 @@
+#bg2 {
+    position: fixed;
+    width: 100%;
+    height: auto;
+    z-index: -1;
+    background-size: cover;
+}
+.content {
+    padding: 3% 0%;
+}
+.projects {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 20px;
+}
+article {
+    background: rgba(0, 0, 0, 0.6); 
+    border: 1px solid #cccccc4f;
+    padding: 5%;
+}
+article header{
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 5%;
+}
+.projects .date{
+    color: #cccccc8a;
+    padding-bottom: 5%;;    
+}
+article header h2 a{
+    color: white;
+    text-decoration: none;
+    font-family: "Times New Roman", sans-serif;
+    font-size: 28px;
+}
+article header h2 a:hover {
+    border-bottom-color: transparent;
+    color: black;
+    text-shadow: 
+    -0px -0px 3px red,  /* top-left */
+    0px -0px 3px red,  /* top-right */
+    -0px  0px 3px red,  /* bottom-left */
+    0px  0px 3px red;  /* bottom-right */ 
+}
+.image.fit img {
+    width: 70%;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+    border-radius: 20px;
+    margin-bottom: 25px;
+}
+.date{
+    text-align: center;
+    justify-content: center;
+}
+article p, article ul{
+    padding: 3% 5%;
+    text-align: justify;
+}
+article p{
+    font-size: 18px;
+}
+article ul{
+    padding: 0 10%;
+    padding-bottom: 5%;
+    font-size: 16px;
+}
+article p strong{
+    color: black;
+    text-shadow:
+    -1px -1px 2px red,  /* top-left */
+    1px -1px 2px red,  /* top-right */
+    -1px  1px 2px red,  /* bottom-left */
+    1px  1px 2px red;  /* bottom-right */ 
+}
+article ul li strong{
+    text-shadow:
+    -0px -0px 2px red,  /* top-left */
+    0px -0px 2px red,  /* top-right */
+    -0px  0px 2px red,  /* bottom-left */
+    0px  0px 2px red;  /* bottom-right */ 
+}
+
+/* ------- Carousel ------- */
+.carousel {
+    overflow: hidden;
+    width: 100%;
+    padding: 5% 0;
+}
+.carousel-inner {
+    display: flex;
+    min-width: 100%; /* Ensures there’s enough content to loop seamlessly */
+    animation: rotate 40s linear infinite;
+}
+.box {
+    flex: 0 0 25%; /* 100% / 4 boxes */
+    height: 150px;
+    background-color: rgba(0, 0, 0, 0.4);
+    border: 1px solid #cccccc4f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@keyframes rotate {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-180%); /* Shift by half of the inner width to loop seamlessly */
+    }
+}
+.carousel h2{
+    color: red;
+    text-align: center;
+    font-family: "MV Boli", sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    padding-bottom: 2%;
+    text-shadow:
+    -3px -3px 3px black,  /* top-left */
+    3px -3px 3px black,  /* top-right */
+    -3px  3px 3px black,  /* bottom-left */
+    3px  3px 3px black;  /* bottom-right */ 
+}
+.carousel-inner .box p .title{
+    color: black;
+    text-align: center;
+    text-shadow: 
+            2px -2px 0 red,  /* top-right */
+            0px  0px 0 red;  /* bottom-right */
+}
+.carousel-inner .box p{
+    color: white;
+    padding: 20px;
+    text-align: justify;
+    overflow: hidden;
+}
+
+
+
