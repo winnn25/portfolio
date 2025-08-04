@@ -199,9 +199,9 @@ nav ul li a:hover::after{
 #portfolio{
     padding: 50px 0;
 }
-.work-list{
+.work-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     grid-gap: 40px;
     margin-top: 40px;
 }
@@ -209,8 +209,6 @@ nav ul li a:hover::after{
     border-radius: 10px;
     position: relative;
     overflow: hidden;
-    max-width: 100%;
-    box-sizing: border-box;
 }
 .work img{
     width: 100%;
@@ -418,6 +416,7 @@ nav .fas{
         font-size: 9px;
     }
 }
+
 
 
 
