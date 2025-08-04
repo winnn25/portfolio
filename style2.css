@@ -27,6 +27,10 @@ article header{
     color: #cccccc8a;
     padding-bottom: 5%;;    
 }
+.date{
+    text-align: center;
+    justify-content: center;
+}
 article header h2 a{
     color: white;
     text-decoration: none;
@@ -49,10 +53,6 @@ article header h2 a:hover {
     display: block;
     border-radius: 20px;
     margin-bottom: 25px;
-}
-.date{
-    text-align: center;
-    justify-content: center;
 }
 article p, article ul{
     padding: 3% 5%;
@@ -81,61 +81,65 @@ article ul li strong{
     -0px  0px 2px red,  /* bottom-left */
     0px  0px 2px red;  /* bottom-right */ 
 }
-
-/* ------- Carousel ------- */
-.carousel {
-    overflow: hidden;
+a {
+    color: #ffd8d8;
+}
+a:hover {
+    color: hsl(0, 100%, 62%);
+}
+/* ------- Difficulty Level ------- */
+.level {
+    text-align: center;
+}
+.level-icon {
+    width: 80px; /* Adjust size as needed */
+    height: auto; /* Keeps aspect ratio */
+    display: inline-block;
+    opacity: 0.8;
+}
+/* ------- AI Chatbot ------- */
+.ai-chatbot {
     width: 100%;
-    padding: 5% 0;
-}
-.carousel-inner {
-    display: flex;
-    min-width: 100%; /* Ensures there’s enough content to loop seamlessly */
-    animation: rotate 40s linear infinite;
-}
-.box {
-    flex: 0 0 25%; /* 100% / 4 boxes */
-    height: 150px;
-    background-color: rgba(0, 0, 0, 0.4);
-    border: 1px solid #cccccc4f;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-@keyframes rotate {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-180%); /* Shift by half of the inner width to loop seamlessly */
-    }
-}
-.carousel h2{
-    color: red;
-    text-align: center;
-    font-family: "MV Boli", sans-serif;
-    font-size: 14px;
-    text-transform: uppercase;
-    padding-bottom: 2%;
-    text-shadow:
-    -3px -3px 3px black,  /* top-left */
-    3px -3px 3px black,  /* top-right */
-    -3px  3px 3px black,  /* bottom-left */
-    3px  3px 3px black;  /* bottom-right */ 
-}
-.carousel-inner .box p .title{
-    color: black;
-    text-align: center;
-    text-shadow: 
-            2px -2px 0 red,  /* top-right */
-            0px  0px 0 red;  /* bottom-right */
-}
-.carousel-inner .box p{
-    color: white;
     padding: 20px;
-    text-align: justify;
-    overflow: hidden;
+    background: rgba(255, 255, 255, 0.6); 
 }
+
+#chat-container {
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    background: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 10px;
+    border-radius: 8px;
+}
+
+#chat-box {
+    height: 300px;
+    overflow-y: auto;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+#chat-input {
+    width: calc(100% - 60px);
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.chat-message {
+    margin: 5px;
+    padding: 10px;
+    background-color: #eaeaea;
+    border-radius: 5px;
+    width: fit-content;
+    max-width: 80%;
+}
+
 
 
 

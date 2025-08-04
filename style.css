@@ -83,6 +83,12 @@ nav ul li a:hover::after{
     padding-top: 5px;
     font-size: 17px;
 }
+.desc a {
+    color: #ababab;
+}
+.desc a:hover {
+    color: #ff8080;
+}
 .row{
     display: flex;
     justify-content: space-between;
@@ -195,7 +201,7 @@ nav ul li a:hover::after{
 }
 .work-list{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     grid-gap: 40px;
     margin-top: 40px;
 }
