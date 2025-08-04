@@ -205,11 +205,6 @@ nav ul li a:hover::after{
     grid-gap: 40px;
     margin-top: 40px;
 }
-@media (min-width: 1150px) {
-    #portfolio .work-list {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
 .work{
     border-radius: 10px;
     position: relative;
@@ -421,6 +416,7 @@ nav .fas{
         font-size: 9px;
     }
 }
+
 
 
 
