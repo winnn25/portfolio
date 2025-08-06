@@ -35,7 +35,7 @@ article header h2 a{
     color: white;
     text-decoration: none;
     font-family: "Times New Roman", sans-serif;
-    font-size: 28px;
+    font-size: 38px;
 }
 article header h2 a:hover {
     border-bottom-color: transparent;
@@ -59,12 +59,12 @@ article p, article ul{
     text-align: justify;
 }
 article p{
-    font-size: 18px;
+    font-size: 28px;
 }
 article ul{
     padding: 0 10%;
     padding-bottom: 5%;
-    font-size: 16px;
+    font-size: 24px;
 }
 article p strong{
     color: black;
@@ -92,7 +92,7 @@ a:hover {
     text-align: center;
 }
 .level-icon {
-    width: 80px; /* Adjust size as needed */
+    width: 80px;
     height: auto; /* Keeps aspect ratio */
     display: inline-block;
     opacity: 0.8;
@@ -139,6 +139,7 @@ a:hover {
     width: fit-content;
     max-width: 80%;
 }
+
 
 
 
