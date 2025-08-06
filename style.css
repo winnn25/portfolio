@@ -30,7 +30,7 @@ nav{
     border-bottom: 1px solid rgb(124, 0, 0);
 }
 .logo{
-    width: 180px;
+    width: 220px;
 }
 nav ul li{
     display: inline-block;
@@ -40,7 +40,7 @@ nav ul li{
 nav ul li a{
     color: white;
     text-decoration: none;
-    font-size: 24px;
+    font-size: 30px;
     position: relative;
 }
 nav ul li a::after{
@@ -58,10 +58,10 @@ nav ul li a:hover::after{
 }
 .header-text{
     margin-top: 15%;
-    font-size: 30px;
+    font-size: 35px;
 }
 .header-text h1{
-    font-size: 60px;
+    font-size: 70px;
     margin-top: 15px;
 }
 .header-text h1 span{
@@ -81,7 +81,7 @@ nav ul li a:hover::after{
 .desc{
     text-align: justify;
     padding-top: 5px;
-    font-size: 17px;
+    font-size: 22px;
 }
 .desc a {
     color: #ababab;
@@ -105,16 +105,19 @@ nav ul li a:hover::after{
     flex-basis: 63%;
 }
 .subtitle{
-    font-size: 40px;
+    font-size: 50px;
     color: white;
 }
 .tab-title{
     display: flex;
     margin: 20px 0 20px;
 }
+.tab-title p{
+    font-size: 22px;
+}
 .tab-links{
     margin-right: 50px;
-    font-size: 18px;
+    font-size: 22px;
     font-weight: 500;
     cursor: pointer;
     position: relative;
@@ -136,10 +139,11 @@ nav ul li a:hover::after{
 .tab-contents ul li{
     list-style: none;
     margin: 10px 0;
+    font-size: 22px;
 }
 .tab-contents ul li span{
     color: rgb(255, 60, 60);
-    font-size: 14px;
+    font-size: 20px;
     font-family: "MV Boli", sans-serif;
 }
 .tab-contents{
@@ -165,7 +169,7 @@ nav ul li a:hover::after{
 .interests-list div{
     background: #262626;
     padding: 40px;
-    font-size: 13px;
+    font-size: 20px;
     font-weight: 300;
     border-radius: 10px;
     transition: background 0.5s, transform 0.5s;
@@ -175,7 +179,7 @@ nav ul li a:hover::after{
     margin-bottom: 25px;
 }
 .interests-list div h2{
-    font-size: 32px;
+    font-size: 38px;
     font-weight: 500;
     margin-bottom: 10px;
 }
@@ -185,7 +189,7 @@ nav ul li a:hover::after{
     text-shadow:
             2px -2px 0 black,  /* top-right */
             2px  2px 0 black;  /* bottom-right */
-    font-size: 14px;
+    font-size: 20px;
     margin-top: 20px;
     display: inline-block;
     font-family: "MV Boli", sans-serif;
@@ -209,6 +213,8 @@ nav ul li a:hover::after{
     border-radius: 10px;
     position: relative;
     overflow: hidden;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 .work img{
     width: 100%;
@@ -236,7 +242,10 @@ nav ul li a:hover::after{
 }
 .layer h3{
     margin-bottom: 15px;
-    font-size: 16px;
+    font-size: 25px;
+}
+.layer p{
+    font-size: 22px;
 }
 .layer a{
     margin-top: 15px;
@@ -266,7 +275,7 @@ nav ul li a:hover::after{
 }
 .contact-left p{
     margin-top: 30px;
-    font-size: 20px;
+    font-size: 26px;
 }
 .contact-left p i{
     color: red;
@@ -306,10 +315,10 @@ nav ul li a:hover::after{
     color: white;
     transition: 0.5s;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 22px;
 }
 .btn:hover{
-    font-size: 18px;
+    font-size: 25px;
     background-color: red;
 }
 .contact-right form{
@@ -416,11 +425,6 @@ nav .fas{
         font-size: 9px;
     }
 }
-
-
-
-
-
 
 
 
