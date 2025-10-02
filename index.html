@@ -1,222 +1,338 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Win's Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/all.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.7.2/css/all.css"
+    />
+  </head>
+  <body>
     <div id="header">
-        <div class="container">
-            <nav>
-                <img src="images/logo.png" class="logo">
-                <ul id="sideMenu">
-                    <li><a href="#header"> Home </a></li>
-                    <li><a href="#about"> About </a></li>
-                    <li><a href="#interests"> Interests </a></li>
-                    <li><a href="#portfolio"> Portfolio </a></li>
-                    <li><a href="#contact"> Contact </a></li>
-                    <li><a href="more.html"> More </a></li>
-                    <i class="fas fa-times" onclick="closeMenu()"></i>
-                </ul>
-                <i class="fas fa-bars" onclick="openMenu()"></i>
-            </nav>
-            <div class="header-text">
-                <p>Software Developer</p>
-                <h1>Hi, I'm <span>Ashwin</span> <br>Kullanthaivel from Malaysia!</h1>
-            </div>
+      <div class="container">
+        <nav>
+          <img src="images/logo.png" class="logo" />
+          <ul id="sideMenu">
+            <li><a href="#header"> Home </a></li>
+            <li><a href="#about"> About </a></li>
+            <li><a href="#interests"> Interests </a></li>
+            <li><a href="#portfolio"> Portfolio </a></li>
+            <li><a href="#contact"> Contact </a></li>
+            <li><a href="more.html"> More </a></li>
+            <i class="fas fa-times" onclick="closeMenu()"></i>
+          </ul>
+          <i class="fas fa-bars" onclick="openMenu()"></i>
+        </nav>
+        <div class="header-text">
+          <p>Software Developer</p>
+          <h1>
+            Hi, I'm <span>Ashwin</span> <br />Kullanthaivel from Malaysia!
+          </h1>
         </div>
+      </div>
     </div>
 
-<!------------- About -------------->
+    <!------------- About -------------->
     <div id="about">
-        <div class="container">
-            <div class="row">
-                <div class="about-col-1">
-                    <img src="images/user.png">
-                </div>
-                <div class="about-col-2">
-                    <h1 class="subtitle">About Me</h1>
-                    <p class="desc">I’m a fresh Computer Science graduate with a strong foundation in Machine Learning, Software Development, and versatile programming languages (PHP, C++, Python, 
-                        and Java). I have a keen interest in web app, software engineering, and Artificial Intelligence. During my internship as a Software Developer at Bitcode Technology, I gained 
-                        hands-on experience in creating websites and building fast, secure web solutions. I'm certified by Microsoft and Linkedln, and I’ve led tech workshops and managed cross-functional 
-                        teams, showcasing my leadership and organizational skills. I wasn’t always this driven. Previously, I was a laid-back CS student scraping by with just-passing grades. But as I 
-                        explored programming, I discovered its potential and gradually became passionate about building things. I want to be a part of taking something meaningful, taking ideas from 1 
-                        to 100 with full dedication and heads down chasing that goal. Now, I’m on a mission to become the world’s best programmer, like 
-                        <a href="https://www.euronews.com/next/2025/07/22/humanity-has-won-so-far-meet-the-worlds-best-programmer-who-beat-ai-and-chatgpt" target="_blank"><em>Przemysław Dębiak</em></a>, 
-                        the guy who beat AI and left a mark in the coding world!</p>
+      <div class="container">
+        <div class="row">
+          <div class="about-col-1">
+            <img src="images/user.png" />
+          </div>
+          <div class="about-col-2">
+            <h1 class="subtitle">About Me</h1>
+            <p class="desc">
+              I’m a fresh Computer Science graduate with a strong foundation in
+              Machine Learning, Software Development, and versatile programming
+              languages (PHP, C++, Python, and Java). I have a keen interest in
+              web app, software engineering, and Artificial Intelligence. During
+              my internship as a Software Developer at Bitcode Technology, I
+              gained hands-on experience in creating websites and building fast,
+              secure web solutions. I'm certified by Microsoft and Linkedln, and
+              I’ve led tech workshops and managed cross-functional teams,
+              showcasing my leadership and organizational skills. I wasn’t
+              always this driven. Previously, I was a laid-back CS student
+              scraping by with just-passing grades. But as I explored
+              programming, I discovered its potential and gradually became
+              passionate about building things. I want to be a part of taking
+              something meaningful, taking ideas from 1 to 100 with full
+              dedication and heads down chasing that goal. Now, I’m on a mission
+              to become the world’s best programmer, like
+              <a
+                href="https://www.euronews.com/next/2025/07/22/humanity-has-won-so-far-meet-the-worlds-best-programmer-who-beat-ai-and-chatgpt"
+                target="_blank"
+                >Przemysław Dębiak</a
+              >, the guy who beat AI and left a mark in the coding world!
+            </p>
 
-                    <div class="tab-title">
-                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
-                        <p class="tab-links" onclick="opentab('exp')">Experience</p>
-                        <p class="tab-links" onclick="opentab('edu')">Education</p>
-                        <p class="tab-links" onclick="opentab('pg')">Certs</p>
-                    </div>
-                    <div class="tab-contents active-tab" id="skills">
-                        <ul>
-                            <li><span>Front-End Development</span><br>Implementing Webpage / UI designs and integrating APIs.</li>
-                            <li><span>Back-End Development</span><br>Developing server-side logic using Laravel and PHP.</li>
-                            <li><span>Database Management</span><br>Handling SQL database operations and optimizations.</li>
-                            <li><span>Team Leadership</span><br>Inspiring & guiding teams to achieve goals effectively.</li>
-                        </ul>
-                    </div>
-                    <div class="tab-contents" id="exp">
-                        <ul>
-                            <li><span>Oct 2024 - Jan 2025</span><br>Internship as a Junior Software Developer</li>
-                        </ul>
-                    </div>
-                    <div class="tab-contents" id="edu">
-                        <ul>
-                            <li><span>Oct 2021</span><br>Foundation In Science (IT)</li>
-                            <li><span>May 2025</span><br>Bachelor of Computer Science (Hons)</li>
-                            <li><span>Soon</span><br>Masters in ...</li>
-                        </ul>
-                    </div>
-                    <div class="tab-contents" id="pg">
-                        <ul>
-                            <li><span>LinkedIn</span><br>Career Essentials in Software Development</li>
-                            <li><span>Microsoft</span><br>Professional Soft Skills Learning Pathway</li>
-                            <li><span>freeCodeCamp</span><br>Full Stack Development (In Progress) </li>
-                        </ul>
-                    </div>
-                </div>
+            <div class="tab-title">
+              <p class="tab-links active-link" onclick="opentab('skills')">
+                Skills
+              </p>
+              <p class="tab-links" onclick="opentab('exp')">Experience</p>
+              <p class="tab-links" onclick="opentab('edu')">Education</p>
+              <p class="tab-links" onclick="opentab('pg')">Certs</p>
             </div>
+            <div class="tab-contents active-tab" id="skills">
+              <ul>
+                <li>
+                  <span>Front-End Development</span><br />Implementing Webpage /
+                  UI designs and integrating APIs.
+                </li>
+                <li>
+                  <span>Back-End Development</span><br />Developing server-side
+                  logic using Laravel and PHP.
+                </li>
+                <li>
+                  <span>Database Management</span><br />Handling SQL database
+                  operations and optimizations.
+                </li>
+                <li>
+                  <span>Team Leadership</span><br />Inspiring & guiding teams to
+                  achieve goals effectively.
+                </li>
+              </ul>
+            </div>
+            <div class="tab-contents" id="exp">
+              <ul>
+                <li>
+                  <span>Oct 2024 - Jan 2025</span><br />Internship as a Junior
+                  Software Developer
+                </li>
+                <li>
+                  <span>Sept 2025 - Dec 2025</span><br />Data Analyst KYPD
+                  Trainee
+                </li>
+              </ul>
+            </div>
+            <div class="tab-contents" id="edu">
+              <ul>
+                <li><span>Oct 2021</span><br />Foundation In Science (IT)</li>
+                <li>
+                  <span>May 2025</span><br />Bachelor of Computer Science (Hons)
+                </li>
+                <li><span>Soon</span><br />Masters in ...</li>
+              </ul>
+            </div>
+            <div class="tab-contents" id="pg">
+              <ul>
+                <li>
+                  <span>Microsoft</span><br />Career Essentials in Software
+                  Development
+                </li>
+                <li>
+                  <span>Microsoft</span><br />Career Essentials in Data Analysis
+                </li>
+                <li>
+                  <span>LinkedIn</span><br />Professional Soft Skills Learning
+                  Pathway
+                </li>
+                <li>
+                  <span>UX Design Institute</span><br />UX Design Fundamentals
+                </li>
+                <li><span>IBM</span><br />Data Fundamentals</li>
+              </ul>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
 
     <!------------- Interests -------------->
     <div id="interests">
-        <div class="container">
-            <h1 class="subtitle">My Interests</h1>
-            <div class="interests-list">
-                <div>
-                    <i class="fa-solid fa-browser"></i>
-                    <h2>Web Designing</h2>
-                    <p class="desc2">I love front-end design for its blend of art and technology. I'm keen on creating websites that not only 
-                        look great but are easy to use on any device. My interest keeps me up-to-date with the latest in websites
-                        designing features & extensions, always trying out new tools and techniques to keep my work fresh and engaging.</p>
-                    <a href="#interests">Learn More</a>
-                </div>
-                <div>
-                    <i class="fa-brands fa-uncharted"></i>
-                    <h2>Software Dev.</h2>
-                    <p class="desc2">I'm passionate about building software that works smoothly and efficiently, from the ground up. Whether it's 
-                        coding the perfect algorithm or connecting a database to a user interface, I enjoy the challenge and creativity 
-                        involved in developing applications that make a difference.</p>
-                    <a href="#interests">Learn More</a>
-                </div>
-                <div>
-                    <i class="fa-solid fa-microchip-ai"></i>
-                    <h2>Artificial Intelligence</h2>
-                    <p class="desc2">Artificial Intelligence is ultimately machine learning and statistical modeling. It’s not magic, just trained 
-                        models doing pattern recognition at large scale. I enjoy learning more about it, discovering it's potential, discovering 
-                        new AI tools, and applying it to automate repetitive tasks and create smarter, more efficient systems.</p>
-                    <a href="#interests">Learn More</a>
-                </div>
-            </div>
+      <div class="container">
+        <h1 class="subtitle">My Interests</h1>
+        <div class="interests-list">
+          <div>
+            <i class="fa-solid fa-browser"></i>
+            <h2>Web Designing</h2>
+            <p class="desc2">
+              I love front-end design for its blend of art and technology. I'm
+              keen on creating websites that not only look great but are easy to
+              use on any device. My interest keeps me up-to-date with the latest
+              in websites designing features & extensions, always trying out new
+              tools and techniques to keep my work fresh and engaging.
+            </p>
+            <a href="#interests">Learn More</a>
+          </div>
+          <div>
+            <i class="fa-brands fa-uncharted"></i>
+            <h2>Software Dev.</h2>
+            <p class="desc2">
+              I'm passionate about building software that works smoothly and
+              efficiently, from the ground up. Whether it's coding the perfect
+              algorithm or connecting a database to a user interface, I enjoy
+              the challenge and creativity involved in developing applications
+              that make a difference.
+            </p>
+            <a href="#interests">Learn More</a>
+          </div>
+          <div>
+            <i class="fa-solid fa-database"></i>
+            <h2>Data Analysis</h2>
+            <p class="desc2">
+            Data Analysis is about finding stories in numbers. It’s not just charts 
+            and spreadsheets, but uncovering patterns, spotting trends, and asking 
+            the right questions. I enjoy exploring data, making sense of messy 
+            information, and turning it into clear insights.
+            </p>
+            <br><a href="#interests">Learn More</a>
+          </div>
         </div>
+      </div>
     </div>
 
     <!------------- Work -------------->
     <div id="portfolio">
-        <div class="container">
-            <h1 class="subtitle">My Work</h1>
-            <div class="work-list">
-                <div class="work">
-                    <img src="images/2.png">
-                    <div class="layer">
-                        <h3>Sign Detection System</h3>
-                        <p>For my FYP, I developed a system for blind students to navigate university campuses, particularly on 
-                            detecting and reading out Lecturer Room Name signs.</p>
-                            <a href="more.html"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </div>
-                </div>
-                <div class="work">
-                    <img src="images/5.png">
-                    <div class="layer">
-                        <h3>Admin Panel Design</h3>
-                        <p>Developed and customized the front-end for an admin panel, optimizing user experience and system 
-                            monitoring capabilities. </p>
-                            <a href="more.html"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </div>
-                </div>
-                <div class="work">
-                    <img src="images/6.png">
-                    <div class="layer">
-                        <h3>Raspberry Pi</h3>
-                        <p>Developed a custom Raspberry Pi setup to deliver a smooth kiosk experience for public interaction, 
-                            with a focus on optimizing both the operating system and the user interface.</p>
-                            <a href="more.html"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </div>
-                </div>
-                <div class="work">
-                    <img src="images/3.png">
-                    <div class="layer">
-                        <h3>Movie Review Webpage</h3>
-                        <p>Developed a webpage for both admin & users utilizing PHP and SQL database for my Server Side assignment.</p>
-                            <a href="more.html"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </div>
-                </div>
-                <div class="work">
-                    <img src="images/9.png">
-                    <div class="layer">
-                        <h3>Product Recommender</h3>
-                        <p>Added a recommendation feature to an e-commerce site, rule based based on price and product types.</p>
-                            <a href="more.html"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </div>
-                </div>
-                <div class="work">
-                    <img src="images/13.png">
-                    <div class="layer">
-                        <h3>AI Chatbot <br>~ IN PROGRESS ~</h3>
-                        <p>Just begun exploring the field of AI chatbots. My goal is to build a bot that can chat and ask 
-                        questions. Can't wait to see where this journey takes me! </p>
-                            <a href="more.html"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </div>
-                </div><br>
+      <div class="container">
+        <h1 class="subtitle">My Work</h1>
+        <div class="work-list">
+          <div class="work">
+            <img src="images/2.png" />
+            <div class="layer">
+              <h3>Sign Detection System</h3>
+              <p>
+                For my FYP, I developed a system for blind students to navigate
+                university campuses, particularly on detecting and reading out
+                Lecturer Room Name signs.
+              </p>
+              <a href="more.html"
+                ><i class="fa-solid fa-arrow-up-right-from-square"></i
+              ></a>
             </div>
+          </div>
+          <div class="work">
+            <img src="images/5.png" />
+            <div class="layer">
+              <h3>Admin Panel Design</h3>
+              <p>
+                Developed and customized the front-end for an admin panel,
+                optimizing user experience and system monitoring capabilities.
+              </p>
+              <a href="more.html"
+                ><i class="fa-solid fa-arrow-up-right-from-square"></i
+              ></a>
+            </div>
+          </div>
+          <div class="work">
+            <img src="images/6.png" />
+            <div class="layer">
+              <h3>Raspberry Pi</h3>
+              <p>
+                Developed a custom Raspberry Pi setup to deliver a smooth kiosk
+                experience for public interaction, with a focus on optimizing
+                both the operating system and the user interface.
+              </p>
+              <a href="more.html"
+                ><i class="fa-solid fa-arrow-up-right-from-square"></i
+              ></a>
+            </div>
+          </div>
+          <div class="work">
+            <img src="images/3.png" />
+            <div class="layer">
+              <h3>Movie Review Webpage</h3>
+              <p>
+                Developed a webpage for both admin & users utilizing PHP and SQL
+                database for my Server Side assignment.
+              </p>
+              <a href="more.html"
+                ><i class="fa-solid fa-arrow-up-right-from-square"></i
+              ></a>
+            </div>
+          </div>
+          <div class="work">
+            <img src="images/9.png" />
+            <div class="layer">
+              <h3>Product Recommender</h3>
+              <p>
+                Added a recommendation feature to an e-commerce site, rule based
+                based on price and product types.
+              </p>
+              <a href="more.html"
+                ><i class="fa-solid fa-arrow-up-right-from-square"></i
+              ></a>
+            </div>
+          </div>
+          <div class="work">
+            <img src="images/13.png" />
+            <div class="layer">
+              <h3>AI Chatbot <br />~ IN PROGRESS ~</h3>
+              <p>
+                Just begun exploring the field of AI chatbots. My goal is to
+                build a bot that can chat and ask questions. Can't wait to see
+                where this journey takes me!
+              </p>
+              <a href="more.html"
+                ><i class="fa-solid fa-arrow-up-right-from-square"></i
+              ></a>
+            </div>
+          </div>
+          <br />
         </div>
+      </div>
     </div>
 
     <!------------- Contact -------------->
     <div id="contact">
-        <div class="container">
-            <div class="row">
-                <div class="contact-left">
-                    <h1 class="subtitle">Contact Me</h1>
-                    <p><i class="fa-solid fa-paper-plane"></i>ashwin33333skke@gmail.com</p>
-                    <p><i class="fa-solid fa-phone"></i>011-11317251</p>
-                    <div class="social-icons">
-                        <a href="https://www.instagram.com/winnn_25" target="_blank"><i class="fa-brands fa-square-instagram"></i></a>
-                        <a href="https://www.linkedin.com/in/ashwinkullanthaivel" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-                        <a href="https://github.com/winnn25" target="_blank"><i class="fa-brands fa-square-github"></i></a>
-                        <a href="https://x.com/winnn_25" target="_blank"><i class="fa-brands fa-square-x-twitter"></i></a>
-                    </div>
-                    <a href="images/my-cv.pdf" download class="btn">Download CV</a>
-                </div>
-                <div class="contact-right">
-                    <form name="submit-to-google-sheet">
-                        <input type="text" name="Name" placeholder="Your Name" required>
-                        <input type="email" name="Email" placeholder="email@gmail.com" required>
-                        <textarea name="Message" rows="6" placeholder="Your message"></textarea>
-                        <button type="submit" class="btn">Submit</button>
-                    </form>
-                    <span id="msg"></span>
-                </div>
+      <div class="container">
+        <div class="row">
+          <div class="contact-left">
+            <h1 class="subtitle">Contact Me</h1>
+            <p>
+              <i class="fa-solid fa-paper-plane"></i>ashwin33333skke@gmail.com
+            </p>
+            <p><i class="fa-solid fa-phone"></i>011-11317251</p>
+            <div class="social-icons">
+              <a href="https://www.instagram.com/winnn_25" target="_blank"
+                ><i class="fa-brands fa-square-instagram"></i
+              ></a>
+              <a
+                href="https://www.linkedin.com/in/ashwinkullanthaivel"
+                target="_blank"
+                ><i class="fa-brands fa-linkedin"></i
+              ></a>
+              <a href="https://github.com/winnn25" target="_blank"
+                ><i class="fa-brands fa-square-github"></i
+              ></a>
+              <a href="https://x.com/winnn_25" target="_blank"
+                ><i class="fa-brands fa-square-x-twitter"></i
+              ></a>
             </div>
+            <a href="images/my-cv.pdf" download class="btn">Download CV</a>
+          </div>
+          <div class="contact-right">
+            <form name="submit-to-google-sheet">
+              <input type="text" name="Name" placeholder="Your Name" required />
+              <input
+                type="email"
+                name="Email"
+                placeholder="email@gmail.com"
+                required
+              />
+              <textarea
+                name="Message"
+                rows="6"
+                placeholder="Your message"
+              ></textarea>
+              <button type="submit" class="btn">Submit</button>
+            </form>
+            <span id="msg"></span>
+          </div>
         </div>
+      </div>
     </div>
 
     <div class="copyright">
-            <p>&copy;Winn. All rights reserved. <br>
-            View this in Desktop for better experience.</p>
+      <p>
+        &copy;Winn. All rights reserved. <br />
+        View this in Desktop for better experience.
+      </p>
     </div>
 
     <script src="script.js"></script>
-</body>
-
+  </body>
 </html>
-
-
