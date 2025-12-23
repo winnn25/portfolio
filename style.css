@@ -146,6 +146,12 @@ nav ul li a:hover::after{
     font-size: 20px;
     font-family: "MV Boli", sans-serif;
 }
+.no-style-link {
+    text-decoration: none;
+    color: inherit;
+    line-height: normal;
+    display: inline;
+}
 .tab-contents{
     display: none;
 }
