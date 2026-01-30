@@ -13,24 +13,15 @@
   <body>
     <div id="header">
       <div class="container">
-        <nav>
-          <img src="images/logo.png" class="logo" />
-          <ul id="sideMenu">
-            <li><a href="#header"> Home </a></li>
-            <li><a href="#about"> About </a></li>
-            <li><a href="#interests"> Interests </a></li>
-            <li><a href="#portfolio"> Portfolio </a></li>
-            <li><a href="#contact"> Contact </a></li>
-            <li><a href="more.html"> More </a></li>
-            <i class="fas fa-times" onclick="closeMenu()"></i>
-          </ul>
-          <i class="fas fa-bars" onclick="openMenu()"></i>
-        </nav>
+        <div id="navbar"></div>
+        
         <div class="header-text">
-          <p>CS Graduate</p>
-          <h1>
-            Hi, I'm <span>Ashwin</span> <br />Kullanthaivel from Malaysia!
-          </h1>
+          <p> Hello I'm</p>
+          <h1> Ashwin Kullanthaivel </h1>
+
+          <p class="role-line">
+            And I'm a <span id="typed-role"></span><span class="typed-caret">|</span>
+          </p>
         </div>
       </div>
     </div>
@@ -45,7 +36,7 @@
           <div class="about-col-2">
             <h1 class="subtitle">About Me</h1>
             <p class="desc">
-              I’m a Computer Science graduate with a strong foundation in Artificial Intelligence, Data Engineering, and Software Development. 
+              I’m a Computer Science graduate with a strong foundation in App Development, Software Engineering, Data Analysis and AI. 
               My interests sit at the intersection of building reliable software, working with data at scale, and applying machine learning to 
               solve real problems. I’m comfortable working across the stack with Python, SQL, Java, PHP, and C++. During my internship at Bitcode 
               Technology, I built fast, secure web applications and backend systems, gaining practical experience in real-world system design and 
@@ -62,119 +53,64 @@
                 >Przemysław Dębiak</a
               >, the guy who beat AI!
             </p>
-
-            <div class="tab-title">
-              <p class="tab-links active-link" onclick="opentab('skills')">
-                Skills
-              </p>
-              <p class="tab-links" onclick="opentab('exp')">Experience</p>
-              <p class="tab-links" onclick="opentab('edu')">Education</p>
-              <p class="tab-links" onclick="opentab('pg')">Certs</p>
-            </div>
-            <div class="tab-contents active-tab" id="skills">
-              <ul>
-                <li>
-                  <span>Front-End Development</span><br />Implementing Webpage /
-                  UI designs and integrating APIs.
-                </li>
-                <li>
-                  <span>Back-End Development</span><br />Developing server-side
-                  logic using Laravel and PHP.
-                </li>
-                <li>
-                  <span>Database Management</span><br />Handling SQL database
-                  operations and optimizations.
-                </li>
-                <li>
-                  <span>Team Leadership</span><br />Inspiring & guiding teams to
-                  achieve goals effectively.
-                </li>
-              </ul>
-            </div>
-            <div class="tab-contents" id="exp">
-              <ul>
-                <li>
-                  <span>Oct 2024 - Jan 2025</span><br />Internship as a Junior
-                  Software Developer
-                </li>
-                <li>
-                  <span>Sept 2025 - Dec 2025</span><br />Data Analyst KYPD
-                  Trainee
-                </li>
-              </ul>
-            </div>
-            <div class="tab-contents" id="edu">
-              <ul>
-                <li><span>Oct 2021</span><br />Foundation In Science (IT)</li>
-                <li>
-                  <span>May 2025</span><br />Bachelor of Computer Science (Hons)
-                </li>
-                <li><span>Soon</span><br />Masters in ...</li>
-              </ul>
-            </div>
-            <div class="tab-contents" id="pg">
-              <ul>
-                <li>
-                  <span>Microsoft</span><br />Career Essentials in Software Development
-                </li>
-                <li>
-                  <span>IBM</span><br />Data Fundamentals Certification
-                </li>
-                <li>
-                  <span>Anaconda</span><br />Machine Learning with Python
-                </li>
-                <li>
-                  <a href="https://www.linkedin.com/in/winnn/details/certifications/" target="_blank" class="no-style-link">
-                    <span> ᯓ➤ View all certifications</span>
-                  </a>
-                </li>
-              </ul>
-            </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!------------- Interests -------------->
-    <div id="interests">
+    <!------------- Tech Stack -------------->
+
+
+    <!------------- Timeline -------------->
+    <div id="timeline">
       <div class="container">
-        <h1 class="subtitle">My Interests</h1>
-        <div class="interests-list">
-          <div>
-            <i class="fa-solid fa-browser"></i>
-            <h2>Web Designing</h2>
-            <p class="desc2">
-              I love front-end design for its blend of art and technology. I'm
-              keen on creating websites that not only look great but are easy to
-              use on any device. My interest keeps me up-to-date with the latest
-              in websites designing features & extensions, always trying out new
-              tools and techniques to keep my work fresh and engaging.
-            </p>
-            <a href="#interests">Learn More</a>
+        <h1 class="subtitle">Career History</h1>
+
+        <div class="timeline">
+          <div class="timeline-item left reveal">
+            <span class="timeline-date">Sept 2025 – Dec 2025</span>
+            <div class="timeline-dot"></div>
+
+            <div class="timeline-card">
+              <h3>Data Analyst KYDP Trainee</h3>
+              <p class="company">Access Group</p>
+              <ul>
+                <li>Reviewed reporting workflows and identified automation opportunities using Python and SQL.</li>
+                <li>Optimized Databricks ingestion pipelines, reducing refresh time from weeks to hours.</li>
+                <li>Built interactive dashboards to support data-driven decisions.</li>
+              </ul>
+            </div>
           </div>
-          <div>
-            <i class="fa-brands fa-uncharted"></i>
-            <h2>Software Dev.</h2>
-            <p class="desc2">
-              I'm passionate about building software that works smoothly and
-              efficiently, from the ground up. Whether it's coding the perfect
-              algorithm or connecting a database to a user interface, I enjoy
-              the challenge and creativity involved in developing applications
-              that make a difference.
-            </p>
-            <a href="#interests">Learn More</a>
+
+          <div class="timeline-item right reveal">
+            <span class="timeline-date">Graduated Aug 2025</span>
+            <div class="timeline-dot"></div>
+
+            <div class="timeline-card">
+              <h3>Bachelor of Computer Science (Hons)</h3>
+              <p class="company">Universiti Tunku Abdul Rahman</p>
+              <p>
+                Completed degree in June 2025 with focus on software development,
+                data, and AI fundamentals.
+              </p>
+            </div>
           </div>
-          <div>
-            <i class="fa-solid fa-database"></i>
-            <h2>Data Analysis</h2>
-            <p class="desc2">
-            Data Analysis is about finding stories in numbers. It’s not just charts 
-            and spreadsheets, but uncovering patterns, spotting trends, and asking 
-            the right questions. I enjoy exploring data, making sense of messy 
-            information, and turning it into clear insights.
-            </p>
-            <br><a href="#interests">Learn More</a>
+
+          <div class="timeline-item left reveal">
+            <span class="timeline-date">Oct 2024 – Jan 2025</span>
+            <div class="timeline-dot"></div>
+
+            <div class="timeline-card">
+              <h3>Software Developer Intern</h3>
+              <p class="company">Bitcode Technology</p>
+              <ul>
+                <li>Built frontend and backend features using Laravel (MVC framework).</li>
+                <li>Integrated RESTful APIs and authentication flows.</li>
+                <li>Improved internal dashboards, increasing efficiency by 35% based on internal feedback.</li>
+              </ul>
+            </div>
           </div>
+
         </div>
       </div>
     </div>
@@ -212,20 +148,6 @@
             </div>
           </div>
           <div class="work">
-            <img src="images/6.png" />
-            <div class="layer">
-              <h3>Raspberry Pi</h3>
-              <p>
-                Developed a custom Raspberry Pi setup to deliver a smooth kiosk
-                experience for public interaction, with a focus on optimizing
-                both the operating system and the user interface.
-              </p>
-              <a href="more.html"
-                ><i class="fa-solid fa-arrow-up-right-from-square"></i
-              ></a>
-            </div>
-          </div>
-          <div class="work">
             <img src="images/3.png" />
             <div class="layer">
               <h3>Movie Review Webpage</h3>
@@ -245,20 +167,6 @@
               <p>
                 Added a recommendation feature to an e-commerce site, rule based
                 based on price and product types.
-              </p>
-              <a href="more.html"
-                ><i class="fa-solid fa-arrow-up-right-from-square"></i
-              ></a>
-            </div>
-          </div>
-          <div class="work">
-            <img src="images/13.png" />
-            <div class="layer">
-              <h3>AI Chatbot <br />~ IN PROGRESS ~</h3>
-              <p>
-                Just begun exploring the field of AI chatbots. My goal is to
-                build a bot that can chat and ask questions. Can't wait to see
-                where this journey takes me!
               </p>
               <a href="more.html"
                 ><i class="fa-solid fa-arrow-up-right-from-square"></i

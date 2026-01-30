@@ -1,27 +1,39 @@
-// ------------------- Tab Navigation -------------------
-var tablinks = document.getElementsByClassName("tab-links");
-var tabcontents = document.getElementsByClassName("tab-contents");
+// ------------------- Timeline -------------------
+const reveals = document.querySelectorAll(".reveal");
 
-function opentab(tabname) {
-    for (tablink of tablinks) {
-        tablink.classList.remove("active-link");
+window.addEventListener("scroll", () => {
+  const windowHeight = window.innerHeight;
+  reveals.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    if (top < windowHeight - 100) {
+      el.classList.add("active");
     }
-    for (tabcontent of tabcontents) {
-        tabcontent.classList.remove("active-tab");
-    }
-    event.currentTarget.classList.add("active-link");
-    document.getElementById(tabname).classList.add("active-tab");
-}
+  });
+});
+
+// ------------------- Nav Bar -------------------
+fetch("navbar.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("navbar").innerHTML = data;
+
+      // Navbar is injected after page load, so grab sideMenu AFTER injection
+      sideMenu = document.getElementById("sideMenu");
+    });
 
 // ------------------- Mobile Menu -------------------
-var sideMenu = document.getElementById("sideMenu");
+// NOTE: #sideMenu exists inside navbar.html, so it becomes available only AFTER the fetch() above.
+// We assign it after navbar injection.
+var sideMenu = null;
 
 function openMenu() {
-    sideMenu.style.right = "0";
+    if (!sideMenu) sideMenu = document.getElementById("sideMenu");
+    if (sideMenu) sideMenu.style.right = "0";
 }
 
 function closeMenu() {
-    sideMenu.style.right = "-170px";
+    if (!sideMenu) sideMenu = document.getElementById("sideMenu");
+    if (sideMenu) sideMenu.style.right = "-170px";
 }
 
 // ------------------- Google Form Logic -------------------
@@ -44,6 +56,62 @@ if (form) {
             .catch(error => console.error('Error!', error.message));
     });
 }
+
+// ------------------- Typing effect  -------------------
+(function () {
+  const el = document.getElementById("typed-role");
+  if (!el) return; // only run on pages that have it
+
+  const roles = ["Web/App Developer", "Software Engineer", "Data Analyst"];
+
+  let roleIndex = 0;
+  let charIndex = 0;
+  let deleting = false;
+
+  const typingSpeed = 70;
+  const deletingSpeed = 40;
+  const pauseAfterType = 1200;
+  const pauseAfterDelete = 250;
+
+  function tick() {
+    const current = roles[roleIndex];
+
+    if (!deleting) {
+      // typing
+      el.textContent = current.slice(0, charIndex + 1);
+      charIndex++;
+
+      if (charIndex === current.length) {
+        // pause then start deleting
+        setTimeout(() => {
+          deleting = true;
+          tick();
+        }, pauseAfterType);
+        return;
+      }
+
+      setTimeout(tick, typingSpeed);
+    } else {
+      // deleting
+      el.textContent = current.slice(0, charIndex - 1);
+      charIndex--;
+
+      if (charIndex === 0) {
+        // move to next word
+        deleting = false;
+        roleIndex = (roleIndex + 1) % roles.length;
+
+        setTimeout(tick, pauseAfterDelete);
+        return;
+      }
+
+      setTimeout(tick, deletingSpeed);
+    }
+  }
+
+  tick();
+})();
+
 
 // ------------------- ChatBot Logic  -------------------
 
