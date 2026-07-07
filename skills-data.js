@@ -1,0 +1,186 @@
+/**
+ * The 25 skill keys shown on the keyboard.
+ *
+ * IMPORTANT: each `name` here must exactly match the corresponding keycap
+ * object's name inside skills-keyboard.spline (that's how hover/keydown
+ * events Barnes get matched to a skill). Renaming label/shortDescription/color is
+ * safe; renaming `name` is not, unless you also rename the object inside
+ * the Spline editor.
+ */
+export const SKILLS = {
+  js: {
+    id: 1,
+    name: "js",
+    label: "JavaScript",
+    shortDescription: "Core language of the web, powering interactive experiences, no cap.",
+    color: "#f0db4f",
+  },
+  ts: {
+    id: 2,
+    name: "ts",
+    label: "TypeScript",
+    shortDescription: "JavaScript with static types for scalable, maintainable systems.",
+    color: "#007acc",
+  },
+  html: {
+    id: 3,
+    name: "html",
+    label: "HTML",
+    shortDescription: "Markup foundation of the web, structuring content across browsers.",
+    color: "#e34c26",
+  },
+  css: {
+    id: 4,
+    name: "css",
+    label: "CSS",
+    shortDescription: "Styling language for designing responsive and consistent interfaces.",
+    color: "#563d7c",
+  },
+  react: {
+    id: 5,
+    name: "react",
+    label: "React",
+    shortDescription: "Component-based UI library for building dynamic interfaces at scale.",
+    color: "#61dafb",
+  },
+  vue: {
+    id: 6,
+    name: "vue",
+    label: "Vue",
+    shortDescription: "Progressive framework for building user interfaces with simplicity.",
+    color: "#41b883",
+  },
+  nextjs: {
+    id: 7,
+    name: "nextjs",
+    label: "Next.js",
+    shortDescription: "Full-stack React framework for production-ready web applications.",
+    color: "#fff",
+  },
+  tailwind: {
+    id: 8,
+    name: "tailwind",
+    label: "Tailwind",
+    shortDescription: "Utility-first CSS framework for rapid and consistent UI development.",
+    color: "#38bdf8",
+  },
+  nodejs: {
+    id: 9,
+    name: "nodejs",
+    label: "Node.js",
+    shortDescription: "JavaScript runtime enabling server-side and backend development.",
+    color: "#6cc24a",
+  },
+  express: {
+    id: 10,
+    name: "express",
+    label: "Express",
+    shortDescription: "Minimal web framework for building APIs and server applications.",
+    color: "#fff",
+  },
+  postgres: {
+    id: 11,
+    name: "postgres",
+    label: "PostgreSQL",
+    shortDescription: "Reliable relational database for structured data and complex queries.",
+    color: "#336791",
+  },
+  mongodb: {
+    id: 12,
+    name: "mongodb",
+    label: "MongoDB",
+    shortDescription: "NoSQL database designed for flexible, document-oriented storage.",
+    color: "#00ed64",
+  },
+  git: {
+    id: 13,
+    name: "git",
+    label: "Git",
+    shortDescription: "Version control system for tracking and managing code changes.",
+    color: "#f1502f",
+  },
+  github: {
+    id: 14,
+    name: "github",
+    label: "GitHub",
+    shortDescription: "Platform for hosting code and collaborating through version control.",
+    color: "#000000",
+  },
+  prettier: {
+    id: 15,
+    name: "prettier",
+    label: "Prettier",
+    shortDescription: "Code formatter ensuring consistent style across projects automatically.",
+    color: "#132c66",
+  },
+  npm: {
+    id: 16,
+    name: "npm",
+    label: "NPM",
+    shortDescription: "Package manager for JavaScript dependencies and project tooling.",
+    color: "#ff0000",
+  },
+  firebase: {
+    id: 17,
+    name: "firebase",
+    label: "Firebase",
+    shortDescription: "Backend platform for authentication, storage, and real-time apps.",
+    color: "#ffca28",
+  },
+  wordpress: {
+    id: 18,
+    name: "wordpress",
+    label: "WordPress",
+    shortDescription: "Content management system for building and managing websites.",
+    color: "#007acc",
+  },
+  linux: {
+    id: 19,
+    name: "linux",
+    label: "Linux",
+    shortDescription: "Open-source operating system powering servers and development environments.",
+    color: "#fff",
+  },
+  docker: {
+    id: 20,
+    name: "docker",
+    label: "Docker",
+    shortDescription: "Container platform for packaging and deploying applications reliably.",
+    color: "#2496ed",
+  },
+  nginx: {
+    id: 21,
+    name: "nginx",
+    label: "NginX",
+    shortDescription: "High-performance web server and reverse proxy for scalable traffic handling.",
+    color: "#008000",
+  },
+  aws: {
+    id: 22,
+    name: "aws",
+    label: "AWS",
+    shortDescription: "Cloud platform offering scalable infrastructure and managed services.",
+    color: "#ff9900",
+  },
+  vim: {
+    id: 23,
+    name: "vim",
+    label: "Vim",
+    shortDescription: "Highly efficient text editor optimized for keyboard-driven workflows.",
+    color: "#019833",
+  },
+  vercel: {
+    id: 24,
+    name: "vercel",
+    label: "Vercel",
+    shortDescription: "Deployment platform for frontend applications with seamless CI/CD.",
+    color: "#000000",
+  },
+  gcp: {
+    id: 25,
+    name: "gcp",
+    label: "Google Cloud",
+    shortDescription: "Google’s cloud platform for scalable computing and data services.",
+    color: "#4285f4",
+  },
+};

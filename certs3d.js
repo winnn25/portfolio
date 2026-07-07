@@ -247,6 +247,41 @@ if(!document.body.classList.contains("unveil-certs")){ /* certs-only */ throw ne
   window.addEventListener("wheel", onWheel, { passive: false });
   stage.addEventListener("wheel", onWheel, { passive: false });
 
+  // --- Touch Swipe Navigation Support for Mobile ---
+  let touchStartY = 0;
+  let touchStartX = 0;
+  let touchStartPos = 0;
+  let isSwiping = false;
+
+  stage.addEventListener("touchstart", (e) => {
+    if (isExpanded()) return;
+    if (e.target && e.target.closest && e.target.closest(".unveil-index")) return;
+    const touch = e.touches[0];
+    touchStartY = touch.clientY;
+    touchStartX = touch.clientX;
+    touchStartPos = targetPos;
+    isSwiping = true;
+  }, { passive: true });
+
+  stage.addEventListener("touchmove", (e) => {
+    if (!isSwiping || isExpanded()) return;
+    const touch = e.touches[0];
+    const diffY = touch.clientY - touchStartY;
+    const diffX = touch.clientX - touchStartX;
+    
+    // Choose vertical drag primarily, but horizontal drag also works smoothly
+    const swipeDelta = Math.abs(diffY) > Math.abs(diffX) ? -diffY : -diffX;
+    const factor = 0.007; // perfectly balanced swipe velocity multiplier
+    const maxPos = getMaxPos();
+    
+    targetPos = Math.max(0, Math.min(maxPos, touchStartPos + swipeDelta * factor));
+    syncActiveToPos();
+  }, { passive: true });
+
+  stage.addEventListener("touchend", () => {
+    isSwiping = false;
+  }, { passive: true });
+
   
   // --- Click picking on the 3D stack ---
   // Because panels overlap in screen space, the top panel can steal clicks.
@@ -355,13 +390,17 @@ if(!document.body.classList.contains("unveil-certs")){ /* certs-only */ throw ne
       const x = t * X_STEP;
       const y = t * Y_STEP;
 
+      const isMobile = window.innerWidth <= 980;
+      const targetNormalWidth = isMobile ? Math.min(window.innerWidth * 0.72, 280) : 520;
+      const baseScale = targetNormalWidth / 1040;
+
       // Base transform (stack)
       let tx = x;
       let ty = y;
       let tz = z;
       let ry = PANEL_ROT_Y;
       let rz = PANEL_ROT_Z;
-      let sc = 1;
+      let sc = baseScale;
 
       // Pop-out effect
       if (expandedIndex !== -1) {
@@ -369,17 +408,21 @@ if(!document.body.classList.contains("unveil-certs")){ /* certs-only */ throw ne
         p.style.pointerEvents = isTarget ? "auto" : "none";
 
         if (isTarget) {
+          const targetZ = isMobile ? 30 : 80;
+          const zoomFactor = isMobile ? 1.05 : 1.2;
+          const targetScale = baseScale * zoomFactor;
+
           // Bring selected card forward and center
           tx = tx + (0 - tx) * expand;
           ty = ty + (0 - ty) * expand;
-          tz = tz + (650 - tz) * expand;
+          tz = tz + (targetZ - tz) * expand;
           ry = ry + (0 - ry) * expand;
           rz = rz + (0 - rz) * expand;
-          sc = 1 + 0.28 * expand;
+          sc = sc + (targetScale - sc) * expand;
         } else {
           // Push others back and fade
           tz = tz - 220 * expand;
-          sc = 1 - 0.04 * expand;
+          sc = sc - (baseScale * 0.04) * expand;
         }
       }
 
@@ -390,13 +433,24 @@ if(!document.body.classList.contains("unveil-certs")){ /* certs-only */ throw ne
       let opacity = Math.max(0.10, 1 - dist * 0.85) * (t < -0.35 ? 0.15 : 1);
       let blur = Math.min(7, dist * 7);
 
-      if (expandedIndex !== -1 && i !== expandedIndex) {
-        opacity = opacity * (1 - 0.85 * expand);
-        blur = blur + 4 * expand;
+      if (expandedIndex !== -1) {
+        if (i === expandedIndex) {
+          // ACTIVE CARD: Absolute zero blur to ensure perfect clarity
+          blur = 0;
+        } else {
+          opacity = opacity * (1 - 0.85 * expand);
+          blur = blur + 4 * expand;
+        }
       }
 
       p.style.opacity = opacity.toFixed(3);
-      p.style.filter = `blur(${blur.toFixed(2)}px)`;
+      
+      // Completely discard the blur filter for sharp, crisp subpixel rendering when blur is negligible
+      if (blur > 0.05) {
+        p.style.filter = `blur(${blur.toFixed(2)}px)`;
+      } else {
+        p.style.filter = "none";
+      }
       p.style.zIndex = String(1000 - Math.round(Math.abs(t) * 40));
     }
 

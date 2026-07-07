@@ -9,16 +9,32 @@
   </head>
   <body>
     <div id="header">
-      <div class="container">
-        <div id="navbar"></div>
-        
-        <div class="header-text">
-          <p> Hello I'm</p>
-          <h1> Ashwin Kullanthaivel </h1>
+      <header class="site-header">
+        <div class="container">
+          <div id="navbar"></div>
+        </div>
+      </header>
+      
+      <div class="container hero-container">
+        <div class="hero-flex-layout">
+          <div class="header-text">
+            <p> Hello I'm</p>
+            <h1> Ashwin Kullanthaivel </h1>
 
-          <p class="role-line">
-            And I'm a <span id="typed-role"></span><span class="typed-caret">|</span>
-          </p>
+            <p class="role-line">
+              And I'm a <span id="typed-role"></span><span class="typed-caret">|</span>
+            </p>
+          </div>
+
+          <div class="keyboard-3d-side-wrapper">
+            <div class="keyboard-3d-wrapper">
+              <div class="keyboard-info-box">
+                <h3 id="kbd-heading" class="kbd-heading">3D Skills Keyboard</h3>
+                <p id="kbd-desc" class="kbd-desc">Hover over any key or type on your physical keyboard to reveal my skills & tech stack!</p>
+              </div>
+              <canvas id="canvas3d"></canvas>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -28,28 +44,34 @@
       <div class="container">
         <div class="row">
           <div class="about-col-1">
-            <img src="images/user.png" />
+            <img src="assets/images/user.png" />
           </div>
           <div class="about-col-2">
             <h1 class="subtitle">About Me</h1>
-            <p class="desc">
-              I’m a Computer Science graduate with a strong foundation in App Development, Software Engineering, Data Analysis and AI. 
-              My interests sit at the intersection of building reliable software, working with data at scale, and applying machine learning to 
-              solve real problems. I’m comfortable working across the stack with Python, SQL, Java, PHP, and C++. During my internship at Bitcode 
-              Technology, I built fast, secure web applications and backend systems, gaining practical experience in real-world system design and 
-              deployment. I’ve worked on data analysis, modeling, and machine learning projects that strengthened my ability to reason with data 
-              and extract meaningful insights.I’ve completed 20+ certifications across data, cloud, AI, and software fundamentals to strengthen my 
-              knowledge and accelerate learning beyond the classroom. I’m certified by Microsoft, LinkedIn, and IBM, and I’ve led tech workshops 
-              and managed cross-functional teams, sharpening both my technical communication and leadership skills.I wasn’t always this driven. 
-              Previously, I was a laid-back CS student scraping by with just-passing grades. But as I explored programming, I discovered my 
-              potential and became passionate about building things. I want to be a part of taking something meaningful, taking ideas from 1 to 
-              100 with full dedication and heads down chasing that goal. I’m on a mission to become a world-class programmer, like
-              <a
-                href="https://www.euronews.com/next/2025/07/22/humanity-has-won-so-far-meet-the-worlds-best-programmer-who-beat-ai-and-chatgpt"
-                target="_blank"
-                >Przemysław Dębiak</a
-              >, the guy who beat AI!
-            </p>
+            <div class="cmd-terminal">
+              <div class="cmd-titlebar">
+                <div class="cmd-title-left">
+                  <i class="fa-solid fa-terminal cmd-icon"></i>
+                  <span>Command Prompt</span>
+                </div>
+                <div class="cmd-controls">
+                  <span class="cmd-control"><i class="fa-solid fa-minus"></i></span>
+                  <span class="cmd-control"><i class="fa-regular fa-square"></i></span>
+                  <span class="cmd-control close-btn"><i class="fa-solid fa-xmark"></i></span>
+                </div>
+              </div>
+              <div class="cmd-body">
+                <div class="cmd-line cmd-header-line text-muted">Microsoft Windows [Version 10.0.25.05.2002]</div>
+                <div class="cmd-line cmd-header-line text-muted">(c) Microsoft Corporation. All rights reserved.</div>
+                <div class="cmd-line cmd-header-gap">&nbsp;</div>
+                <div class="cmd-line"><span class="cmd-prompt">C:\Users\Ashwin&gt;</span> <span class="cmd-typed">type about_me.txt</span></div>
+                <div class="cmd-content">
+                  <p id="cmd-para-1">An ambitious Computer Science Eng. graduate turned builder, currently working as a Web Developer at Purple Connect, where I develop and customize Microsoft Dynamics 365 solutions, build system integrations, and automate business processes for enterprise clients.</p>
+                  <p id="cmd-para-2" class="typing-text" data-text="My background spans software development, data analysis, and AI, with hands-on experience in Python, SQL, Java, PHP, and C++. I enjoy turning complex problems into scalable solutions, whether that's through code, designing and automations."></p>
+                  <p id="cmd-para-3" class="typing-text" data-text="What started as curiosity became a genuine obsession with learning and building. Today, I'm focused on continuously improving my craft, creating impactful technology, and pushing myself toward becoming a world-class developer."></p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -65,6 +87,21 @@
 
         <div class="timeline">
           <div class="timeline-item left reveal">
+            <span class="timeline-date">Feb 2026 – Present</span>
+            <div class="timeline-dot"></div>
+
+            <div class="timeline-card">
+              <h3>Web Developer</h3>
+              <p class="company">Purple Connect</p>
+              <ul>
+                <li>Developed and customized Microsoft Dynamics 365 solutions for enterprise clients.</li>
+                <li>Built middleware integrations and RESTful API connections between business systems.</li>
+                <li>Configured CRM workflows, forms, dashboards, and automations to streamline operations.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item right reveal">
             <span class="timeline-date">Sept 2025 – Dec 2025</span>
             <div class="timeline-dot"></div>
 
@@ -79,21 +116,20 @@
             </div>
           </div>
 
-          <div class="timeline-item right reveal">
+          <div class="timeline-item left reveal">
             <span class="timeline-date">Graduated Aug 2025</span>
             <div class="timeline-dot"></div>
 
             <div class="timeline-card">
-              <h3>Bachelor of Computer Science (Hons)</h3>
+              <h3>Bachelor of Computer Science Eng.</h3>
               <p class="company">Universiti Tunku Abdul Rahman</p>
               <p>
-                Completed degree in June 2025 with focus on software development,
-                data, and AI fundamentals.
+                Completed degree in June 2025, majoring in Sofware Dev and AI.
               </p>
             </div>
           </div>
 
-          <div class="timeline-item left reveal">
+          <div class="timeline-item right reveal">
             <span class="timeline-date">Oct 2024 – Jan 2025</span>
             <div class="timeline-dot"></div>
 
@@ -113,131 +149,245 @@
     </div>
 
     <!------------- Work -------------->
-    <div id="portfolio">
+    <div id="portfolio" class="work-carousel-section">
       <div class="container">
         <h1 class="subtitle">My Work</h1>
-        <div class="work-list">
-          <div class="work">
-            <img src="images/2.png" />
-            <div class="layer">
-              <h3>Sign Detection System</h3>
-              <p>
-                For my FYP, I developed a system for blind students to navigate
-                university campuses, particularly on detecting and reading out
-                Lecturer Room Name signs.
-              </p>
-              <a href="more.html"
-                ><i class="fa-solid fa-arrow-up-right-from-square"></i
-              ></a>
+        <p class="section-desc">A showcase of interactive designs, automated tools, and full-stack applications. Hover over any card to pause the carousel and explore deeper project details.</p>
+        
+        <div class="carousel-viewport">
+          <div class="carousel-track">
+            
+            <!-- Card 1: Sign Detection System -->
+            <div class="carousel-card">
+              <div class="card-img-wrapper">
+                <img src="assets/images/project/2.png" alt="Sign Detection System" />
+                <div class="card-badge">FYP Project</div>
+              </div>
+              <div class="card-content">
+                <h3>Sign Detection System</h3>
+                <p class="short-desc">Real-time lecturer room sign recognition and audio voice navigation.</p>
+                <div class="hover-details">
+                  <div>
+                    <div class="hover-title">Sign Detection System</div>
+                    <p class="long-desc">Real-time mobile detection system for blind students, recognizing lecturer room signs and speaking them aloud using text-to-speech.</p>
+                    <div class="tech-tags">
+                      <span>YOLO Model</span>
+                      <span>Tesseract OCR</span>
+                      <span>TTS Voice</span>
+                    </div>
+                  </div>
+                  <a href="https://github.com/winnn25/fyp" target="_blank" class="explore-btn">View full code <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="work">
-            <img src="images/5.png" />
-            <div class="layer">
-              <h3>Admin Panel Design</h3>
-              <p>
-                Developed and customized the front-end for an admin panel,
-                optimizing user experience and system monitoring capabilities.
-              </p>
-              <a href="more.html"
-                ><i class="fa-solid fa-arrow-up-right-from-square"></i
-              ></a>
+
+            <!-- Card 2: Admin Panel Design -->
+            <div class="carousel-card">
+              <div class="card-img-wrapper">
+                <img src="assets/images/project/5.png" alt="Admin Panel Design" />
+                <div class="card-badge">UI/UX Design</div>
+              </div>
+              <div class="card-content">
+                <h3>Admin Panel Design</h3>
+                <p class="short-desc">Customized workspace featuring reporting charts and performance logs.</p>
+                <div class="hover-details">
+                  <div>
+                    <div class="hover-title">Admin Panel Design</div>
+                    <p class="long-desc">A highly customized backend analytics workspace with animated reporting charts, interactive tooltips, and performance logs.</p>
+                    <div class="tech-tags">
+                      <span>Reporting Charts</span>
+                      <span>Custom Themes</span>
+                      <span>Grid Layouts</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="work">
-            <img src="images/3.png" />
-            <div class="layer">
-              <h3>Movie Review Webpage</h3>
-              <p>
-                Developed a webpage for both admin & users utilizing PHP and SQL
-                database for my Server Side assignment.
-              </p>
-              <a href="more.html"
-                ><i class="fa-solid fa-arrow-up-right-from-square"></i
-              ></a>
+
+            <!-- Card 3: Movie Review Webpage -->
+            <div class="carousel-card">
+              <div class="card-img-wrapper">
+                <img src="assets/images/project/3.png" alt="Movie Review Webpage" />
+                <div class="card-badge">Full Stack</div>
+              </div>
+              <div class="card-content">
+                <h3>Movie Review Webpage</h3>
+                <p class="short-desc">Film discussion catalog utilizing database synchronization.</p>
+                <div class="hover-details">
+                  <div>
+                    <div class="hover-title">Movie Review Webpage</div>
+                    <p class="long-desc">A dynamic film catalog and discussion board featuring responsive user feedback, real-time database updates, and admin dashboards.</p>
+                    <div class="tech-tags">
+                      <span>PHP Backend</span>
+                      <span>SQL Database</span>
+                      <span>CRUD Controls</span>
+                    </div>
+                  </div>
+                  <a href="https://github.com/winnn25/movie-review-system" target="_blank" class="explore-btn">View full code <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="work">
-            <img src="images/9.png" />
-            <div class="layer">
-              <h3>Product Recommender</h3>
-              <p>
-                Added a recommendation feature to an e-commerce site, rule based
-                based on price and product types.
-              </p>
-              <a href="more.html"
-                ><i class="fa-solid fa-arrow-up-right-from-square"></i
-              ></a>
+
+            <!-- Card 4: Product Recommender -->
+            <div class="carousel-card">
+              <div class="card-img-wrapper">
+                <img src="assets/images/project/9.png" alt="Product Recommender" />
+                <div class="card-badge">React Component</div>
+              </div>
+              <div class="card-content">
+                <h3>Product Recommender</h3>
+                <p class="short-desc">E-commerce matching module sorting category and price ranges.</p>
+                <div class="hover-details">
+                  <div>
+                    <div class="hover-title">Product Recommender</div>
+                    <p class="long-desc">An e-commerce item matching module displaying related goods based on category matching and automated price ranges in real time.</p>
+                    <div class="tech-tags">
+                      <span>Rule Filters</span>
+                      <span>React Engine</span>
+                      <span>FakeStoreAPI</span>
+                    </div>
+                  </div>
+                  <a href="https://github.com/winnn25/ai_product_recommender" target="_blank" class="explore-btn">View full code <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+              </div>
             </div>
+
+            <!-- DUPLICATE CARDS TO ENABLE PERFECT INFINITE MARQUEE LOOP -->
+            
+            <!-- Card 1 Clone -->
+            <div class="carousel-card">
+              <div class="card-img-wrapper">
+                <img src="assets/images/project/2.png" alt="Sign Detection System" />
+                <div class="card-badge">FYP Project</div>
+              </div>
+              <div class="card-content">
+                <h3>Sign Detection System</h3>
+                <p class="short-desc">Real-time lecturer room sign recognition and audio voice navigation.</p>
+                <div class="hover-details">
+                  <div>
+                    <div class="hover-title">Sign Detection System</div>
+                    <p class="long-desc">Real-time mobile detection system for blind students, recognizing lecturer room signs and speaking them aloud using text-to-speech.</p>
+                    <div class="tech-tags">
+                      <span>YOLO Model</span>
+                      <span>Tesseract OCR</span>
+                      <span>TTS Voice</span>
+                    </div>
+                  </div>
+                  <a href="https://github.com/winnn25/fyp" target="_blank" class="explore-btn">View full code <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 2 Clone -->
+            <div class="carousel-card">
+              <div class="card-img-wrapper">
+                <img src="assets/images/project/5.png" alt="Admin Panel Design" />
+                <div class="card-badge">UI/UX Design</div>
+              </div>
+              <div class="card-content">
+                <h3>Admin Panel Design</h3>
+                <p class="short-desc">Customized workspace featuring reporting charts and performance logs.</p>
+                <div class="hover-details">
+                  <div>
+                    <div class="hover-title">Admin Panel Design</div>
+                    <p class="long-desc">A highly customized backend analytics workspace with animated reporting charts, interactive tooltips, and performance logs.</p>
+                    <div class="tech-tags">
+                      <span>Reporting Charts</span>
+                      <span>Custom Themes</span>
+                      <span>Grid Layouts</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 3 Clone -->
+            <div class="carousel-card">
+              <div class="card-img-wrapper">
+                <img src="assets/images/project/3.png" alt="Movie Review Webpage" />
+                <div class="card-badge">Full Stack</div>
+              </div>
+              <div class="card-content">
+                <h3>Movie Review Webpage</h3>
+                <p class="short-desc">Film discussion catalog utilizing database synchronization.</p>
+                <div class="hover-details">
+                  <div>
+                    <div class="hover-title">Movie Review Webpage</div>
+                    <p class="long-desc">A dynamic film catalog and discussion board featuring responsive user feedback, real-time database updates, and admin dashboards.</p>
+                    <div class="tech-tags">
+                      <span>PHP Backend</span>
+                      <span>SQL Database</span>
+                      <span>CRUD Controls</span>
+                    </div>
+                  </div>
+                  <a href="https://github.com/winnn25/movie-review-system" target="_blank" class="explore-btn">View full code <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 4 Clone -->
+            <div class="carousel-card">
+              <div class="card-img-wrapper">
+                <img src="assets/images/project/9.png" alt="Product Recommender" />
+                <div class="card-badge">React Component</div>
+              </div>
+              <div class="card-content">
+                <h3>Product Recommender</h3>
+                <p class="short-desc">E-commerce matching module sorting category and price ranges.</p>
+                <div class="hover-details">
+                  <div>
+                    <div class="hover-title">Product Recommender</div>
+                    <p class="long-desc">An e-commerce item matching module displaying related goods based on category matching and automated price ranges in real time.</p>
+                    <div class="tech-tags">
+                      <span>Rule Filters</span>
+                      <span>React Engine</span>
+                      <span>FakeStoreAPI</span>
+                    </div>
+                  </div>
+                  <a href="https://github.com/winnn25/ai_product_recommender" target="_blank" class="explore-btn">View full code <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+              </div>
+            </div>
+
           </div>
-          <br />
         </div>
       </div>
     </div>
 
-    <!------------- Contact -------------->
-    <div id="contact">
-      <div class="container">
-        <div class="row">
-          <div class="contact-left">
-            <h1 class="subtitle">Contact Me</h1>
-            <p>
-              <i class="fa-solid fa-paper-plane"></i>ashwin33333skke@gmail.com
-            </p>
-            <p><i class="fa-solid fa-phone"></i>011-11317251</p>
-            <div class="social-icons">
-              <a href="https://www.instagram.com/winnn_25" target="_blank"
-                ><i class="fa-brands fa-square-instagram"></i
-              ></a>
-              <a
-                href="https://www.linkedin.com/in/winnn/"
-                target="_blank"
-                ><i class="fa-brands fa-linkedin"></i
-              ></a>
-              <a href="https://github.com/winnn25" target="_blank"
-                ><i class="fa-brands fa-square-github"></i
-              ></a>
-              <a href="https://x.com/winnn_25" target="_blank"
-                ><i class="fa-brands fa-square-x-twitter"></i
-              ></a>
-            </div>
-            <a href="images/my-cv.pdf" download class="btn">Download CV</a>
-          </div>
-          <div class="contact-right">
-            <form name="submit-to-google-sheet">
-              <input type="text" name="Name" placeholder="Your Name" required />
-              <input
-                type="email"
-                name="Email"
-                placeholder="email@gmail.com"
-                required
-              />
-              <textarea
-                name="Message"
-                rows="6"
-                placeholder="Your message"
-              ></textarea>
-              <button type="submit" class="btn">Submit</button>
-            </form>
-            <span id="msg"></span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="copyright">
-      <p>
-        &copy;Winn. All rights reserved. <br />
-        View this in Desktop for better experience.
-      </p>
-    </div>
+    <div class="copyright" id="footer"></div>
 
     <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script type="module">
+      import { initKeyboardScene } from "./keyboard.js";
+
+      const headingEl = document.getElementById("kbd-heading");
+      const descEl = document.getElementById("kbd-desc");
+
+      initKeyboardScene({
+        canvas: document.getElementById("canvas3d"),
+        scenePath: "./assets/skills-keyboard.spline",
+        soundsPath: "./assets/keycap-sounds",
+        onSkillChange: (skill) => {
+          if (skill) {
+            headingEl.textContent = skill.label;
+            headingEl.style.color = skill.color || "#ff004f";
+            descEl.textContent = skill.shortDescription;
+            if (skill.name === "github" || skill.name === "vercel") {
+              headingEl.style.textShadow = "0 0 3px #ffffff, 0 0 6px #ffffff, 0 0 12px #ffffff";
+            } else if (skill.name === "prettier") {
+              headingEl.style.textShadow = "0 0 4px #ffffff, 0 0 8px rgba(255, 255, 255, 0.7)";
+            } else {
+              headingEl.style.textShadow = "none";
+            }
+          } else {
+            headingEl.textContent = "3D Skills Keyboard";
+            headingEl.style.color = "#ffffff";
+            headingEl.style.textShadow = "none";
+            descEl.textContent = "Hover over any key or type on your physical keyboard to reveal my skills & tech stack!";
+          }
+        },
+      }).catch(console.error);
+    </script>
   </body>
 </html>
-
-
-
-
-
-

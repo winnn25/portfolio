@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Ashwin</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        /* Subtle glowing red linear gradients in top-right and bottom-left to emphasize the sci-fi atmosphere */
+        .glow-ambient-1 {
+            position: fixed;
+            top: -10%;
+            right: -10%;
+            width: 50vw;
+            height: 50vw;
+            background: radial-gradient(circle, rgba(255, 0, 79, 0.05) 0%, transparent 70%);
+            z-index: -2;
+            pointer-events: none;
+        }
+        
+        .glow-ambient-2 {
+            position: fixed;
+            bottom: -10%;
+            left: -10%;
+            width: 50vw;
+            height: 50vw;
+            background: radial-gradient(circle, rgba(255, 0, 79, 0.04) 0%, transparent 70%);
+            z-index: -2;
+            pointer-events: none;
+        }
+
+        .contact-section {
+            position: relative;
+            z-index: 2;
+            padding: 16px 0 10px 0; /* Slightly increased by 4px as requested for the perfect look */
+            display: flex;
+            align-items: center;
+            min-height: calc(100vh - 150px);
+        }
+
+        .contact-title-container {
+            margin-bottom: 15px; /* Pull elements closer to the header navbar as requested */
+            position: relative;
+        }
+
+        .contact-title-container h1 {
+            font-size: clamp(28px, 4.5vw, 42px); /* Slightly downscaled for desktop layout fit */
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin: 0 0 6px 0;
+            background: linear-gradient(135deg, #ffffff 0%, #ababab 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .contact-title-container .subtitle-line {
+            width: 50px;
+            height: 3px;
+            background: #ff004f;
+            border-radius: 2px;
+            box-shadow: 0 0 10px rgba(255, 0, 79, 0.5);
+        }
+
+        #msg {
+            display: block;
+            margin-top: 15px;
+            font-size: 15px;
+            color: #25d366;
+            font-weight: 500;
+            text-shadow: 0 0 8px rgba(37, 211, 102, 0.3);
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body class="contact-page">
+    <!-- Ambient Sci-fi Glows -->
+    <div class="glow-ambient-1"></div>
+    <div class="glow-ambient-2"></div>
+
+    <!-- Global Header -->
+    <header class="site-header">
+        <div class="container">
+            <div id="navbar"></div>
+        </div>
+    </header>
+
+    <!-- Main Contact Area -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="row">
+                
+                <!-- Left Column: Contact Cards & Social Outlets -->
+                <div class="contact-left">
+                    <div>
+                        <div class="contact-title-container">
+                            <h1>Let's Connect</h1>
+                            <div class="subtitle-line"></div>
+                        </div>
+                        
+                        <!-- WhatsApp Me Card -->
+                        <div class="info-card">
+                            <div class="icon-box">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </div>
+                            <div class="info-text">
+                                <h4>WhatsApp Me</h4>
+                                <p>011-11317251</p>
+                            </div>
+                        </div>
+
+                        <!-- Location Card -->
+                        <div class="info-card">
+                            <div class="icon-box">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div class="info-text">
+                                <h4>Location</h4>
+                                <p>Kuala Lumpur, Malaysia</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Glowing Social Outlets -->
+                    <div style="margin-top: 30px;">
+                        <div style="font-size: 13px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: #888; text-align: center; margin-bottom: 15px;">
+                            Social Media
+                        </div>
+                        <div class="social-icons">
+                            <a href="https://www.instagram.com/winnn_25" target="_blank" class="instagram" title="Instagram">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/winnn/" target="_blank" class="linkedin" title="LinkedIn">
+                                <i class="fa-brands fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://github.com/winnn25" target="_blank" class="github" title="GitHub">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                            <a href="https://wa.me/601111317251" target="_blank" class="whatsapp" title="WhatsApp">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </a>
+                            <a href="mailto:ashwin33333skke@gmail.com" target="_blank" class="email" title="Email Ashwin">
+                                <i class="fa-regular fa-envelope"></i>
+                            </a>
+                            <a href="https://vowpixel.com" target="_blank" class="web" title="My Freelance">
+                                <i class="fa-light fa-globe"></i>
+                            </a>
+                        </div>
+                        
+                        <!-- Centered CV Download Button -->
+                        <div class="cv-download-wrapper" style="display: flex; justify-content: center; width: 100%; margin-top: 35px;">
+                            <a href="assets/images/my-cv.pdf" download class="btn-submit-futuristic" style="margin: 0; text-decoration: none;">Download CV <i class="fa-solid fa-download" style="font-size: 14px;"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Interactive Form -->
+                <div class="contact-right">
+                    <div class="contact-form-container" style="padding: 18px 24px;">
+                        <div style="font-size: 6px; font-weight: 700; letter-spacing: 2.2px; text-transform: uppercase; color: #ff004f; margin-bottom: 8px; display: flex; align-items: center; gap: 6px;">
+                            <span style="display: inline-block; width: 4px; height: 4px; background: #ff004f; border-radius: 50%; box-shadow: 0 0 6px #ff004f; animation: pulse 1.5s infinite;"></span>
+                            Secure Message Portal
+                        </div>
+                        <h2 style="font-size: clamp(18px, 2.5vw, 24px); font-weight: 700; color: #fff; margin: 0 0 16px 0;">Drop me a text:</h2>
+                        
+                        <form name="submit-to-google-sheet">
+                            <div class="input-group">
+                                <input type="text" name="Name" placeholder=" " required />
+                                <label>Your Name</label>
+                            </div>
+                            
+                            <div class="input-group">
+                                <input type="email" name="Email" placeholder=" " required />
+                                <label>Your Email</label>
+                            </div>
+                            
+                            <div class="input-group">
+                                <textarea name="Message" rows="3" placeholder=" " required></textarea>
+                                <label>Message</label>
+                            </div>
+                            
+                            <!-- Centered Send Message Button -->
+                            <div style="display: flex; justify-content: center; width: 100%; margin-top: 15px;">
+                                <button type="submit" class="btn-submit-futuristic" style="margin: 0;">
+                                    Send Message <i class="fa-solid fa-paper-plane" style="font-size: 14px;"></i>
+                                </button>
+                            </div>
+                        </form>
+                        <span id="msg"></span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Global Footer -->
+    <div class="copyright" id="footer"></div>
+
+    <script src="script.js"></script>
+    <script>
+        // Form feedback handling
+        const sheetForm = document.forms['submit-to-google-sheet'];
+        if (sheetForm) {
+            sheetForm.addEventListener('submit', () => {
+                const msgSpan = document.getElementById("msg");
+                if (msgSpan) {
+                    msgSpan.style.opacity = "1";
+                    msgSpan.innerHTML = "<i class='fa-solid fa-circle-notch fa-spin'></i> Sending message securely...";
+                }
+            });
+        }
+    </script>
+</body>
+</html>

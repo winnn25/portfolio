@@ -1,0 +1,8 @@
+{
+  "name": "Win's Portfolio",
+  "description": "Ashwin Kullanthaivel's professional portfolio website showcasing skills, career timeline, projects, and certifications.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

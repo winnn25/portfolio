@@ -1,0 +1,21 @@
+{
+  "name": "wins-portfolio",
+  "version": "1.0.0",
+  "description": "Ashwin Kullanthaivel's professional portfolio website showcasing skills, career timeline, projects, and certifications.",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx server.ts",
+    "build": "echo 'No build step required'",
+    "start": "tsx server.ts",
+    "lint": "echo 'No lint step required'"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.14.0",
+    "tsx": "^4.21.0",
+    "typescript": "~5.8.2"
+  }
+}
