@@ -431,7 +431,8 @@ nav ul li a:hover::after{
     display: flex;
     gap: 30px;
     width: max-content;
-    animation: loopMarquee 32s linear infinite;
+    /* --loop-width / --loop-duration are set by script.js (one full set of cards) */
+    animation: loopMarquee var(--loop-duration, 32s) linear infinite;
 }
 .carousel-track:hover,
 .carousel-track.paused {
@@ -584,7 +585,7 @@ nav ul li a:hover::after{
         transform: translateX(0);
     }
     100% {
-        transform: translateX(-50%);
+        transform: translateX(calc(-1 * var(--loop-width, 50%)));
     }
 }
 
@@ -604,8 +605,7 @@ nav ul li a:hover::after{
         font-size: 10.5px !important;
     }
     .carousel-track {
-        animation: loopMarquee 18s linear infinite !important; /* Fast and ultra-smooth on mobile */
-        gap: 15px !important;
+        gap: 15px !important; /* speed is set per screen size in script.js */
     }
     .card-badge {
         top: 10px !important;
@@ -767,7 +767,7 @@ form input, form textarea {
     font-size: 0.64rem; /* Slightly reduced as requested */
     line-height: 1.5;
     font-weight: 900;
-    font-family: "MV Boli", sans-serif;
+    font-family: "MV Boli", "Patrick Hand", cursive;
     border-top: 1px solid rgb(124, 0, 0);
 }
 #msg{
@@ -1914,8 +1914,8 @@ body.unveil-certs #navbar{ display:block; }
   overflow:hidden;
   border: 1px solid rgba(255, 43, 43, 0.22);
   background: rgba(0,0,0,0.28);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  /* No backdrop-filter here: the certificate image covers the whole panel, so the
+     blur was invisible but cost a full re-blur of the scene behind every panel. */
   box-shadow: 0 30px 90px rgba(0,0,0,0.55), 0 10px 35px rgba(255, 0, 0, 0.10);
   will-change: transform, opacity;
   backface-visibility: hidden;
@@ -2976,3 +2976,128 @@ nav ul li a.active::after {
 
 
 
+
+
+/* ==================== Hero call-to-action buttons ==================== */
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 30px;
+}
+.cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 26px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.3s ease,
+                background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+.cta i {
+    font-size: 13px;
+}
+.cta-primary {
+    background: linear-gradient(135deg, #ff004f 0%, #a80034 100%);
+    box-shadow: 0 8px 24px rgba(255, 0, 79, 0.35);
+}
+.cta-primary::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    left: -100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+    transition: left 0.5s ease;
+}
+.cta-primary:hover::before {
+    left: 100%;
+}
+.cta-primary:hover {
+    box-shadow: 0 12px 30px rgba(255, 0, 79, 0.55);
+    transform: translateY(-2px);
+}
+.cta-ghost {
+    border: 1px solid rgba(255, 0, 79, 0.55);
+    background: rgba(255, 0, 79, 0.06);
+}
+.cta-ghost:hover {
+    border-color: #ff004f;
+    background: rgba(255, 0, 79, 0.14);
+    box-shadow: 0 8px 22px rgba(255, 0, 79, 0.25);
+    transform: translateY(-2px);
+}
+.cta:active {
+    transform: translateY(1px);
+}
+
+@media only screen and (max-width: 600px) {
+    .hero-actions {
+        gap: 10px;
+        margin-top: 20px;
+    }
+    .cta {
+        padding: 11px 18px;
+        font-size: 13.5px;
+    }
+}
+
+/* ==================== Featured: "See all projects" ==================== */
+.featured-more {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+/* ==================== Let's Talk strip ==================== */
+.lets-talk {
+    padding: 30px 0 70px;
+}
+.lets-talk-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 40px 48px;
+    border-radius: 18px;
+    border: 1px solid rgba(255, 0, 79, 0.25);
+    background:
+        radial-gradient(circle at 0% 0%, rgba(255, 0, 79, 0.16), transparent 55%),
+        rgba(13, 13, 13, 0.85);
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.6);
+}
+.lets-talk-card h2 {
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-bottom: 8px;
+}
+.lets-talk-card p {
+    color: #ababab;
+    font-size: 15px;
+    line-height: 1.6;
+    max-width: 520px;
+}
+.lets-talk-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    flex-shrink: 0;
+}
+
+@media only screen and (max-width: 768px) {
+    .lets-talk-card {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 28px 24px;
+        gap: 20px;
+    }
+    .lets-talk-card p {
+        font-size: 14px;
+    }
+}

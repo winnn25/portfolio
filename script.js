@@ -103,18 +103,35 @@ const form = document.forms ? document.forms['submit-to-google-sheet'] : null;
 if (form) {
     const scriptURL = 'https://script.google.com/macros/s/AKfycbzZCaoOk7XdJLhijpgfrBizGWIscAWi7vDe-M1yDSnbDIVdJmRSMTNpvZCyBMWe5cg/exec';
     const msg = document.getElementById("msg");
+    const submitBtn = form.querySelector('button[type="submit"]');
 
-    form.addEventListener('submit', (e) => {
+    const showMsg = (html, isError = false) => {
+        msg.classList.toggle('is-error', isError);
+        msg.style.opacity = "1";
+        msg.innerHTML = html;
+    };
+
+    form.addEventListener('submit', async (e) => {
         e.preventDefault();
-        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-            .then(response => {
-                msg.innerHTML = "Message sent successfully!";
-                setTimeout(() => {
-                    msg.innerHTML = "";
-                }, 3000);
-                form.reset();
-            })
-            .catch(error => console.error('Error!', error.message));
+        if (submitBtn) submitBtn.disabled = true;
+        showMsg("<i class='fa-solid fa-circle-notch fa-spin'></i> Sending message securely...");
+
+        try {
+            const response = await fetch(scriptURL, { method: 'POST', body: new FormData(form) });
+            if (!response.ok) throw new Error(`HTTP ${response.status}`);
+            // The Apps Script replies with JSON like {"result":"success"} or {"result":"error"}
+            const data = await response.json().catch(() => ({}));
+            if (data.result === 'error') throw new Error('Script returned an error');
+
+            showMsg("Message sent successfully!");
+            form.reset();
+            setTimeout(() => { msg.innerHTML = ""; }, 4000);
+        } catch (error) {
+            console.error('Contact form error:', error);
+            showMsg("Sorry, your message couldn't be sent. Please try again or email me directly.", true);
+        } finally {
+            if (submitBtn) submitBtn.disabled = false;
+        }
     });
 }
 
@@ -122,8 +139,11 @@ if (form) {
 (function () {
   const el = document.getElementById("typed-role");
   if (!el) return; // only run on pages that have it
+  const articleEl = document.getElementById("typed-article");
 
   const roles = ["Web Developer", "App Developer"];
+  // "a Web Developer" but "an App Developer"
+  const articleFor = (word) => (/^[aeiou]/i.test(word) ? "an" : "a");
 
   let roleIndex = 0;
   let charIndex = 0;
@@ -139,6 +159,7 @@ if (form) {
 
     if (!deleting) {
       // typing
+      if (charIndex === 0 && articleEl) articleEl.textContent = articleFor(current);
       el.textContent = current.slice(0, charIndex + 1);
       charIndex++;
 
@@ -264,19 +285,34 @@ if (form) {
     }
   }
 
+  // The loop sleeps when there is nothing to draw and wakes on the next movement
+  let running = false;
+  function wake() {
+    if (!running) {
+      running = true;
+      requestAnimationFrame(animate);
+    }
+  }
+
   window.addEventListener("mousemove", (e) => {
     addPoint(e.clientX, e.clientY);
+    wake();
   });
 
   window.addEventListener("touchmove", (e) => {
     if (e.touches.length > 0) {
       addPoint(e.touches[0].clientX, e.touches[0].clientY);
+      wake();
     }
   });
 
   // Animation Loop
   function animate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+    if (!points.length && !particles.length) {
+      running = false; // canvas is clear: go to sleep
+      return;
+    }
 
     // 1. Draw the glowing neon slash (Fruit Ninja style with tapering, glowing curves)
     if (points.length > 1) {
@@ -341,8 +377,6 @@ if (form) {
 
     requestAnimationFrame(animate);
   }
-
-  animate();
 })();
 
 
@@ -398,61 +432,74 @@ window.addEventListener('resize', () => {
 });
 
 
-// ------------------- Carousel Mobile Tap-to-Toggle -------------------
-const initMobileCarouselToggle = () => {
-  const cards = document.querySelectorAll('.carousel-card');
+// ------------------- Featured Carousel (seamless loop) -------------------
+// The cards are written once in the HTML. Here we append just enough copies to
+// fill the screen, then slide the track by exactly one set width so the loop
+// restarts on an identical frame (no visible jump, no gap).
+const initCarousel = () => {
   const track = document.querySelector('.carousel-track');
-  if (!cards.length) return;
-  
-  const updateTrackPauseState = () => {
-    if (!track) return;
-    const hasActive = Array.from(cards).some(c => c.classList.contains('active-mobile'));
-    if (hasActive) {
-      track.classList.add('paused');
-      track.style.animationPlayState = 'paused';
-    } else {
-      track.classList.remove('paused');
-      track.style.animationPlayState = '';
+  if (!track) return;
+  const originals = Array.from(track.children);
+  if (!originals.length) return;
+
+  let lastWidth = 0;
+  const build = () => {
+    const viewportWidth = track.parentElement.offsetWidth;
+    if (viewportWidth === lastWidth) return; // ignore mobile URL-bar resizes
+    lastWidth = viewportWidth;
+
+    track.querySelectorAll('[data-clone]').forEach((c) => c.remove());
+
+    const gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+    const setWidth = originals.reduce((w, card) => w + card.offsetWidth + gap, 0);
+    const copies = Math.max(1, Math.ceil(viewportWidth / setWidth));
+
+    for (let n = 0; n < copies; n++) {
+      originals.forEach((card) => {
+        const clone = card.cloneNode(true);
+        clone.dataset.clone = '';
+        clone.setAttribute('aria-hidden', 'true');
+        clone.querySelectorAll('a').forEach((a) => (a.tabIndex = -1));
+        track.appendChild(clone);
+      });
     }
+
+    const speed = window.innerWidth <= 600 ? 100 : 90; // px per second
+    track.style.setProperty('--loop-width', `${setWidth}px`);
+    track.style.setProperty('--loop-duration', `${(setWidth / speed).toFixed(2)}s`);
   };
 
-  cards.forEach(card => {
-    card.addEventListener('click', (e) => {
-      // If the clicked element or its parent is the link button, let it navigate normally
-      if (e.target.closest('.explore-btn')) {
-        return; 
-      }
-      
-      // Check if we are on a mobile/tablet touch view (width <= 1024px)
-      if (window.innerWidth <= 1024) {
-        e.preventDefault();
-        const isActive = card.classList.contains('active-mobile');
-        
-        // Remove active class from all cards
-        cards.forEach(c => c.classList.remove('active-mobile'));
-        
-        if (!isActive) {
-          card.classList.add('active-mobile');
-        }
-        
-        updateTrackPauseState();
-        // Stop event from bubbling to document click
-        e.stopPropagation();
-      }
+  build();
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(build, 200);
+  });
+
+  // Touch screens: tap a card to show its details (and pause), tap elsewhere to close
+  const openCard = (card) => {
+    track.querySelectorAll('.active-mobile').forEach((c) => {
+      if (c !== card) c.classList.remove('active-mobile');
     });
+    if (card) card.classList.toggle('active-mobile');
+    track.classList.toggle('paused', !!track.querySelector('.active-mobile'));
+  };
+
+  track.addEventListener('click', (e) => {
+    if (window.innerWidth > 1024 || e.target.closest('.explore-btn')) return;
+    const card = e.target.closest('.carousel-card');
+    if (!card) return;
+    e.preventDefault();
+    e.stopPropagation();
+    openCard(card);
   });
-  
-  // Clicking anywhere else on the document closes any active mobile card details
-  document.addEventListener('click', () => {
-    cards.forEach(c => c.classList.remove('active-mobile'));
-    updateTrackPauseState();
-  });
+  document.addEventListener('click', () => openCard(null));
 };
 
 if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initMobileCarouselToggle);
+  document.addEventListener('DOMContentLoaded', initCarousel);
 } else {
-  initMobileCarouselToggle();
+  initCarousel();
 }
 
 
